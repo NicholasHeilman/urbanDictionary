@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NikeUrbanApp</string>
+    <string name="up_votes_ascending">Up Votes Ascending</string>
+    <string name="up_votes_descending">Up Votes Descending</string>
+    <string name="down_votes_ascending">Down Votes Ascending</string>
+    <string name="down_votes_descending">Down Votes Descending</string>
+    <string name="search_any_word">Search Any Word</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+

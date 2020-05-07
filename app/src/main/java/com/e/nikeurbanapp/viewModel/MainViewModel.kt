@@ -11,12 +11,12 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private var _definitions: MutableLiveData<UrbanResponse> = MutableLiveData()
+    private var definitionSearch: MutableLiveData<UrbanResponse> = MutableLiveData()
     val definitions: LiveData<UrbanResponse>
-        get() = _definitions
+        get() = definitionSearch
 
 
     fun defineTerm(term: String) = viewModelScope.launch {
-        _definitions.postValue(Repository.getDefinition(term))
+        definitionSearch.postValue(Repository.getDefinition(term))
     }
 }

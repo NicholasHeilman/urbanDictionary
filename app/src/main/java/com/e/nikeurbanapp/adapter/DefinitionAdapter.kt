@@ -9,11 +9,10 @@ import com.e.nikeurbanapp.databinding.SearchListKeyBinding
 import com.e.nikeurbanapp.extensions.bind
 import com.e.nikeurbanapp.model.Definition
 
-class DefinitionAdapter() :
-    DataBoundListAdapter<Definition>(
+class DefinitionAdapter() : DataBoundListAdapter<Definition>(
         diffCallback = object : DiffUtil.ItemCallback<Definition>() {
             override fun areItemsTheSame(oldItem: Definition, newItem: Definition): Boolean =
-                oldItem.defid == newItem.defid
+                oldItem == newItem
 
             override fun areContentsTheSame(oldItem: Definition, newItem: Definition): Boolean =
                 oldItem == newItem

@@ -39,6 +39,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = DefinitionAdapter()
         view.apply {
+
             //Search Button
             btn_Search.setOnClickListener {
                 indeterminateBar?.visibility = View.VISIBLE
@@ -63,7 +64,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun clearSearch(){
-            iv_Clear?.visibility = View.VISIBLE
+            iv_Clear.visibility = View.VISIBLE
     }
 
     override fun onStart() {

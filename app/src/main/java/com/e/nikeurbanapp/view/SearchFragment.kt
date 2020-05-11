@@ -12,17 +12,11 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.e.nikeurbanapp.R
 import com.e.nikeurbanapp.adapter.DefinitionAdapter
+import com.e.nikeurbanapp.model.Definition
 import com.e.nikeurbanapp.viewModel.MainViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
-import kotlinx.android.synthetic.main.snippet_toolbar.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 
 class SearchFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
@@ -51,11 +45,11 @@ class SearchFragment : Fragment() {
                 et_toolbarSearch.text?.clear()
                 iv_Clear.visibility = View.INVISIBLE
             }
-//            //Filter Button
-//            btn_filter.setOnClickListener {
-//                let { filterMenu(it) }
-//            }
-
+            //Filter Button
+            btn_filter.setOnClickListener {
+                filterMenu(it as AppCompatImageView)
+            }
+            //RecyclerView
             rv_definitionList.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = this@SearchFragment.adapter
@@ -79,11 +73,41 @@ class SearchFragment : Fragment() {
         })
     }
 
-//    private fun filterMenu(filter: AppCompatImageView) {
-//        viewModel.definitions.value?.list?.let{
-//            PopupMenu(filter.context, filter).apply {
-//                menuInflater.inflate(R.menu.filter_menu, menu)
-//        }
-//    }
-//    }
+    private fun filterMenu(filter: AppCompatImageView) {
+        viewModel.definitions.value?.list?.let {
+            PopupMenu(filter.context, filter).apply {
+                menuInflater.inflate(R.menu.filter_menu, menu)
+                setOnMenuItemClickListener { item ->
+                    val sortedList: List<Definition> = when(item.itemId) {
+                        R.id.up_votes_ascending -> { it.toMutableList().apply { sortBy { it.thumbsUp } }.toList() }
+                        R.id.up_votes_descending -> { it.toMutableList().apply { sortByDescending { it.thumbsUp } }.toList() }
+                        R.id.down_votes_ascending ->  { it.toMutableList().apply { sortBy { it.thumbsDown } }.toList() }
+                        R.id.down_votes_descending ->{ it.toMutableList().apply { sortByDescending { it.thumbsDown } }.toList() }
+                        else -> it
+                    } as List<Definition>
+                    adapter?.submitList(sortedList)
+                    true
+                }
+            }.show()
+        }
+    }
 }
+
+
+//        popupMenu.menuInflater.inflate(R.menu.filter_menu, popupMenu.menu)
+//        popupMenu.setOnMenuItemClickListener{ item ->
+//            when(item.itemId) {
+//                R.id.up_votes_ascending ->
+//                    Toast.makeText(context, "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()
+//                R.id.up_votes_descending ->
+//                    Toast.makeText(context, "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()
+//                R.id.down_votes_ascending ->
+//                    Toast.makeText(context, "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()
+//                R.id.down_votes_descending ->
+//                    Toast.makeText(context, "You Clicked : " + item.title, Toast.LENGTH_SHORT).show()
+//            }
+//            true
+//        }
+//        popupMenu.show()
+
+

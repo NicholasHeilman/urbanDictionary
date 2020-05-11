@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_sort_by_up_votes_ascending"
+        android:id="@+id/up_votes_ascending"
         android:title="@string/up_votes_ascending"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_sort_by_up_votes_descending"
+        android:id="@+id/up_votes_descending"
         android:title="@string/up_votes_descending"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_sort_by_down_votes_ascending"
+        android:id="@+id/down_votes_ascending"
         android:title="@string/down_votes_ascending"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_sort_by_down_votes_descending"
+        android:id="@+id/down_votes_descending"
         android:title="@string/down_votes_descending"
         app:showAsAction="never"/>
 </menu>

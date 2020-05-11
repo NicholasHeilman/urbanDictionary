@@ -43,6 +43,7 @@ class SearchFragment : Fragment() {
                 indeterminateBar?.visibility = View.VISIBLE
                 viewModel.defineTerm(et_toolbarSearch.text.toString())
                 iv_Clear.visibility = View.VISIBLE
+                cv_noResult.visibility = View.GONE
             }
 
             //Clear Button
@@ -67,14 +68,8 @@ class SearchFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         searchInputObservable()
-//        viewModel.definitions.observe(viewLifecycleOwner) { showDefinitions(it)}
     }
 
-//    private fun showDefinitions( urbanResponse: UrbanResponse){
-//        val definitions = urbanResponse.list
-//        adapter?.submitList(definitions)
-//        binding.noResult.root.toggleVisiblity(show = false)
-//    }
     private fun searchInputObservable() {
         viewModel.definitions.observe(this, Observer {
                 adapter?.submitList(it.list)
@@ -82,7 +77,6 @@ class SearchFragment : Fragment() {
             if(it.list.isNullOrEmpty() ){
                 cv_noResult.visibility = View.VISIBLE
             }
-
         })
     }
 

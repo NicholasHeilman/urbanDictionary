@@ -1,172 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="definition"
             type="com.e.nikeurbanapp.model.Definition" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/et_toolbarSearch"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/toolbar_rounded_corner"
-            android:drawablePadding="5dp"
-            android:gravity="start|center"
-            android:hint="@string/search_any_word"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:paddingEnd="30dp"
-            android:singleLine="true"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_Search"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_Clear"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:padding="20dp"
-            android:paddingStart="10dp"
-            android:paddingTop="20dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_toolbarSearch"
-            app:layout_constraintEnd_toEndOf="@id/et_toolbarSearch"
-            app:layout_constraintTop_toTopOf="@id/et_toolbarSearch"
-            app:srcCompat="@drawable/ic_close"
-            android:visibility="invisible"
-            />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_Search"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/toolbar_rounded_corner"
-
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_filter"
-            app:layout_constraintStart_toEndOf="@id/et_toolbarSearch"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_search"
-            tools:ignore="VectorDrawableCompat" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_filter"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/toolbar_rounded_corner"
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_Search"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_sort"
-            tools:ignore="VectorDrawableCompat"
-
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_definitionList"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:layoutManager="LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/search_list_key" />
-
-        <ProgressBar
-            android:id="@+id/indeterminateBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_noResult"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:cardBackgroundColor="@color/mediumPurple"
-        app:cardCornerRadius="10dp"
-        android:visibility="invisible"
-        >
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp" >
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_noResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="@string/no_results_found"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_toolbarSearch"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/toolbar_rounded_corner"
+                android:drawablePadding="5dp"
+                android:gravity="start|center"
+                android:hint="@string/search_any_word"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingEnd="30dp"
+                android:singleLine="true"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tvBody"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_Search"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias=".2"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvBody"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/type_in_the_search_area"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_Clear"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="20dp"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/et_toolbarSearch"
+                app:layout_constraintEnd_toEndOf="@id/et_toolbarSearch"
+                app:layout_constraintTop_toTopOf="@id/et_toolbarSearch"
+                app:srcCompat="@drawable/ic_close" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_Search"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/toolbar_rounded_corner"
+
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_filter"
+                app:layout_constraintStart_toEndOf="@id/et_toolbarSearch"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_search"
+                tools:ignore="VectorDrawableCompat" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_filter"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/toolbar_rounded_corner"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_Search"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_sort"
+                tools:ignore="VectorDrawableCompat"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_definitionList"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:layoutManager="LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_noResult" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/search_list_key" />
+
+            <ProgressBar
+                android:id="@+id/indeterminateBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/noResultView"
+                layout="@layout/snippet_no_result"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

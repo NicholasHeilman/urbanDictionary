@@ -7,8 +7,9 @@
     android:layout_width="match_parent"
     android:background="@drawable/starry_background">
 
+
         <fragment
-            android:id="@+id/rv_searchList"
+            android:id="@+id/main_searchList"
             layout="@layout/fragment_search"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
@@ -21,30 +22,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--        <ProgressBar-->
-    <!--            android:id="@+id/indeterminateBar"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:visibility="invisible"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintTop_toTopOf="parent"-->
-    <!--            />-->
-
-
-<!--<include-->
-<!--android:id="@+id/toolbar"-->
-<!--layout="@layout/snippet_toolbar"-->
-<!--app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--android:id="@+id/root"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-
-<!--android:fitsSystemWindows="true">-->
 
 

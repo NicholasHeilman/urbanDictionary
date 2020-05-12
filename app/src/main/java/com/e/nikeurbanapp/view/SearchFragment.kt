@@ -9,21 +9,23 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.e.nikeurbanapp.R
 import com.e.nikeurbanapp.adapter.DefinitionAdapter
 import com.e.nikeurbanapp.databinding.FragmentSearchBinding
-import com.e.nikeurbanapp.extensions.toggleVisiblity
 import com.e.nikeurbanapp.model.Definition
-import com.e.nikeurbanapp.model.UrbanResponse
 import com.e.nikeurbanapp.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
+import kotlinx.android.synthetic.main.snippet_toolbar.view.*
+import kotlinx.android.synthetic.main.fragment_search.view.btn_filter as btn_filter1
+import kotlinx.android.synthetic.main.fragment_search.view.et_toolbarSearch as et_toolbarSearch1
+import kotlinx.android.synthetic.main.snippet_toolbar.view.btn_Search as btn_Search1
+
 
 class SearchFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
-    private lateinit var binding: FragmentSearchBinding
+//    private lateinit var binding: FragmentSearchBinding
     private var adapter: DefinitionAdapter? = null
 
     override fun onCreateView(
@@ -43,7 +45,7 @@ class SearchFragment : Fragment() {
                 indeterminateBar?.visibility = View.VISIBLE
                 viewModel.defineTerm(et_toolbarSearch.text.toString())
                 iv_Clear.visibility = View.VISIBLE
-                cv_noResult.visibility = View.GONE
+                noResultView.visibility = View.GONE
             }
 
             //Clear Button
@@ -75,7 +77,7 @@ class SearchFragment : Fragment() {
                 adapter?.submitList(it.list)
                 indeterminateBar?.visibility = View.INVISIBLE
             if(it.list.isNullOrEmpty() ){
-                cv_noResult.visibility = View.VISIBLE
+                noResultView.visibility = View.VISIBLE
             }
         })
     }
@@ -91,7 +93,7 @@ class SearchFragment : Fragment() {
                         R.id.down_votes_ascending -> { it.toMutableList().apply { sortBy { it.thumbsDown } }.toList() }
                         R.id.down_votes_descending -> { it.toMutableList().apply { sortByDescending { it.thumbsDown } }.toList() }
                         else -> it
-                    } as List<Definition>
+                    }
                     adapter?.submitList(sortedList)
                     true
                 }

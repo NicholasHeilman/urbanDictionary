@@ -17,12 +17,11 @@ import com.e.nikeurbanapp.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
 import kotlinx.android.synthetic.main.snippet_toolbar.view.*
-
+import kotlinx.android.synthetic.main.snippet_welcome.*
 
 
 class SearchFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
-//    private lateinit var binding: FragmentSearchBinding
     private var adapter: DefinitionAdapter? = null
 
     override fun onCreateView(
@@ -42,6 +41,7 @@ class SearchFragment : Fragment() {
                 indeterminateBar?.visibility = View.VISIBLE
                 viewModel.defineTerm(et_toolbarSearch.text.toString())
                 iv_Clear.visibility = View.VISIBLE
+                welcomeView.visibility = View.GONE
                 noResultView.visibility = View.GONE
             }
 

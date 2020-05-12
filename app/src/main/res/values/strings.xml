@@ -7,8 +7,9 @@
     <string name="search_any_word">Search Any Word</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="type_in_the_search_area">Type in the search area</string>
     <string name="no_results_found">No Results Found</string>
+    <string name="welcome">Hello</string>
+    <string name="search_urban_dictionary">Search Urban Dictionary</string>
 </resources>
 

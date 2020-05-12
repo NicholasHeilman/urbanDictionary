@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/tvClear"
+            android:id="@+id/iv_Clear"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:padding="20dp"
@@ -39,12 +39,11 @@
             android:paddingTop="20dp"
             android:paddingEnd="10dp"
             android:paddingBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="@id/et_toolbarSearch"
-            app:layout_constraintStart_toEndOf="@id/et_toolbarSearch"
-            app:layout_constraintTop_toTopOf="@id/et_toolbarSearch"
-            app:srcCompat="@drawable/ic_close"
             android:visibility="invisible"
-            tools:ignore="VectorDrawableCompat" />
+            app:layout_constraintBottom_toBottomOf="@id/et_toolbarSearch"
+            app:layout_constraintEnd_toEndOf="@id/et_toolbarSearch"
+            app:layout_constraintTop_toTopOf="@id/et_toolbarSearch"
+            app:srcCompat="@drawable/ic_close" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_Search"

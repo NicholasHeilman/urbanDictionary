@@ -12,15 +12,12 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.e.nikeurbanapp.R
 import com.e.nikeurbanapp.adapter.DefinitionAdapter
-import com.e.nikeurbanapp.databinding.FragmentSearchBinding
 import com.e.nikeurbanapp.model.Definition
 import com.e.nikeurbanapp.viewModel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
 import kotlinx.android.synthetic.main.snippet_toolbar.view.*
-import kotlinx.android.synthetic.main.fragment_search.view.btn_filter as btn_filter1
-import kotlinx.android.synthetic.main.fragment_search.view.et_toolbarSearch as et_toolbarSearch1
-import kotlinx.android.synthetic.main.snippet_toolbar.view.btn_Search as btn_Search1
+
 
 
 class SearchFragment : Fragment() {

@@ -67,15 +67,6 @@ class SearchFragment : Fragment() {
         activity?.et_toolbarSearch?.addTextChangedListener(textWatcher)
         view.apply {
 
-            //Search Button
-//            btn_Search.setOnClickListener {
-//                indeterminateBar?.visibility = View.VISIBLE
-//                viewModel.defineTerm(et_toolbarSearch.text.toString())
-//                iv_Clear.visibility = View.VISIBLE
-//                welcomeView.visibility = View.GONE
-//                noResultView.visibility = View.GONE
-//            }
-
             //Clear Button
             iv_Clear.setOnClickListener {
                 et_toolbarSearch.text?.clear()
@@ -133,5 +124,3 @@ class SearchFragment : Fragment() {
     }
 
 }
-
-

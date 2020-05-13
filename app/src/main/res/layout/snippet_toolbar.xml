@@ -17,6 +17,7 @@
             android:layout_height="60dp"
             android:layout_margin="5dp"
             android:background="@drawable/toolbar_rounded_corner"
+            android:drawableStart="@drawable/ic_search"
             android:drawablePadding="5dp"
             android:gravity="start|center"
             android:hint="@string/search_any_word"
@@ -26,7 +27,7 @@
             android:singleLine="true"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_Search"
+            app:layout_constraintEnd_toStartOf="@id/btn_filter"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,37 +47,20 @@
             app:srcCompat="@drawable/ic_close" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_Search"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/toolbar_rounded_corner"
-
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_filter"
-            app:layout_constraintStart_toEndOf="@id/et_toolbarSearch"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_search"
-            tools:ignore="VectorDrawableCompat" />
-
-        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/btn_filter"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/toolbar_rounded_corner"
-
             android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_Search"
+            app:layout_constraintStart_toEndOf="@id/et_toolbarSearch"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_sort"
             tools:ignore="VectorDrawableCompat" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -3,12 +3,12 @@ package com.e.nikeurbanapp.view
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.PopupMenu
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +20,6 @@ import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
 import kotlinx.android.synthetic.main.snippet_toolbar.*
 import kotlinx.android.synthetic.main.snippet_toolbar.view.*
-import kotlinx.android.synthetic.main.snippet_toolbar.view.iv_Clear
-
 
 class SearchFragment : Fragment() {
     private val viewModel: MainViewModel by viewModels()
@@ -96,9 +94,9 @@ class SearchFragment : Fragment() {
 
     private fun searchInputObservable() {
         viewModel.definitions.observe(this, Observer {
-                adapter?.submitList(it.list)
-                indeterminateBar?.visibility = View.INVISIBLE
-            if(it.list.isNullOrEmpty() ){
+            adapter?.submitList(it.list)
+            indeterminateBar?.visibility = View.INVISIBLE
+            if (it.list.isNullOrEmpty()) {
                 noResultView.visibility = View.VISIBLE
             }
         })
@@ -109,11 +107,19 @@ class SearchFragment : Fragment() {
             PopupMenu(filter.context, filter).apply {
                 menuInflater.inflate(R.menu.filter_menu, menu)
                 setOnMenuItemClickListener { item ->
-                    val sortedList: List<Definition> = when(item.itemId) {
-                        R.id.up_votes_ascending -> { it.toMutableList().apply { sortBy { it.thumbsUp } }.toList() }
-                        R.id.up_votes_descending -> { it.toMutableList().apply { sortByDescending { it.thumbsUp } }.toList() }
-                        R.id.down_votes_ascending -> { it.toMutableList().apply { sortBy { it.thumbsDown } }.toList() }
-                        R.id.down_votes_descending -> { it.toMutableList().apply { sortByDescending { it.thumbsDown } }.toList() }
+                    val sortedList: List<Definition> = when (item.itemId) {
+                        R.id.up_votes_ascending -> {
+                            it.toMutableList().apply { sortBy { it.thumbsUp } }.toList()
+                        }
+                        R.id.up_votes_descending -> {
+                            it.toMutableList().apply { sortByDescending { it.thumbsUp } }.toList()
+                        }
+                        R.id.down_votes_ascending -> {
+                            it.toMutableList().apply { sortBy { it.thumbsDown } }.toList()
+                        }
+                        R.id.down_votes_descending -> {
+                            it.toMutableList().apply { sortByDescending { it.thumbsDown } }.toList()
+                        }
                         else -> it
                     }
                     adapter?.submitList(sortedList)

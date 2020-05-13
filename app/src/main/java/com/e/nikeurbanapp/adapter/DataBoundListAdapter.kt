@@ -21,8 +21,8 @@ abstract class DataBoundListAdapter<T>(
 
     abstract fun createBinding(parent: ViewGroup, viewType: Int): ViewDataBinding
 
-    override fun onBindViewHolder(holder: DataBoundViewHolder, position: Int){
-        if(position < itemCount){
+    override fun onBindViewHolder(holder: DataBoundViewHolder, position: Int) {
+        if (position < itemCount) {
             bind(holder.binding, getItem(position))
             holder.binding.executePendingBindings()
         }

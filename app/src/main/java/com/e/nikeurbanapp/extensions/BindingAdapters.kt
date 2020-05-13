@@ -4,6 +4,6 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 
 @BindingAdapter("dateDisplay")
-fun TextView.dateDisplay(date: String){
+fun TextView.dateDisplay(date: String) {
     text = date.formatDate()
 }

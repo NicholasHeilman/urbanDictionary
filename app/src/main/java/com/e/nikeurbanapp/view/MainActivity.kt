@@ -1,7 +1,7 @@
 package com.e.nikeurbanapp.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.e.nikeurbanapp.R
 
 class MainActivity : AppCompatActivity() {

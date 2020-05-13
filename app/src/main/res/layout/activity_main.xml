@@ -8,9 +8,8 @@
     android:background="@drawable/starry_background">
 
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_searchList"
-            layout="@layout/fragment_search"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"

@@ -38,6 +38,11 @@ class SearchFragment : Fragment() {
         override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
             val isBackSpace = query?.length ?: -1 >= s?.length ?: -1
             query = s.toString()
+
+            /**
+             * this can be improved
+             * TODO: Build external function to toggle visibility
+             */
             rv_definitionList.visibility = View.VISIBLE
             iv_Clear.visibility = View.VISIBLE
             welcomeView.visibility = View.GONE
@@ -46,11 +51,11 @@ class SearchFragment : Fragment() {
             s?.let {
                 if (it.isNotEmpty() && !isBackSpace) {
                     viewModel.defineTerm(it.toString())
-                    indeterminateBar?.visibility = View.VISIBLE
+                    indeterminateBar.visibility = View.VISIBLE
                 }
             }
         }
-    }
+    } //end textWatcher
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -84,8 +89,7 @@ class SearchFragment : Fragment() {
                 adapter = this@SearchFragment.adapter
             }
         }
-
-    }
+    }// end onViewCreated
 
     override fun onStart() {
         super.onStart()
@@ -127,6 +131,6 @@ class SearchFragment : Fragment() {
                 }
             }.show()
         }
-    }
+    }// end showFilterMenu
 
 }

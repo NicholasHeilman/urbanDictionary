@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
 
     <item
         android:id="@+id/up_votes_ascending"
+        android:icon="@drawable/ic_thumb_up_black"
         android:title="@string/up_votes_ascending"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/up_votes_descending"
+        android:icon="@drawable/ic_thumb_up_black"
         android:title="@string/up_votes_descending"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/down_votes_ascending"
+        android:icon="@drawable/ic_thumb_down_black"
         android:title="@string/down_votes_ascending"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/down_votes_descending"
+        android:icon="@drawable/ic_thumb_down_black"
         android:title="@string/down_votes_descending"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>

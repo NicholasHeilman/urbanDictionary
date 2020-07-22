@@ -17,9 +17,6 @@ class DefinitionAdapter : DataBoundListAdapter<Definition>(
             oldItem == newItem
     }
 ) {
-
-//    private var onClick: View.OnClickListener? = null
-
     override fun createBinding(parent: ViewGroup, viewType: Int): ViewDataBinding =
         parent.bind(R.layout.search_list_key)
 
@@ -27,8 +24,5 @@ class DefinitionAdapter : DataBoundListAdapter<Definition>(
         when (binding) {
             is SearchListKeyBinding -> binding.definition = item
         }
-
-//        binding.root.tag = item
-//        binding.root.setOnClickListener(onClick)
     }
 }

@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @JsonClass(generateAdapter = true)
 data class UrbanResponse(
-
     @field:Json(name = "list")
     val list: List<Definition>?
 ) : Parcelable

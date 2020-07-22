@@ -1,8 +1,10 @@
 package com.e.nikeurbanapp
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
 
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,4 +16,9 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+}
+
+@RunWith(RobolectricTestRunner::class)
+class UnitTests {
+
 }

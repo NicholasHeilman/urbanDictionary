@@ -11,7 +11,6 @@ abstract class DataBoundListAdapter<T>(
 ) : ListAdapter<T, DataBoundViewHolder>(
     AsyncDifferConfig.Builder<T>(diffCallback).build()
 ) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBoundViewHolder {
         val binding = createBinding(parent, viewType)
         val viewHolder = DataBoundViewHolder(binding = binding)

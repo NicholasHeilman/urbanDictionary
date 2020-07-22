@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="definition"
             type="com.e.nikeurbanapp.model.Definition" />
@@ -14,8 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:backgroundTint="@color/mediumPurple"
-        app:cardCornerRadius="8dp"
-        >
+        app:cardCornerRadius="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,12 +27,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{definition.word}"
+                android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Loading"
-                android:textColor="@color/white"/>
+                tools:text="Loading" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_definition"
@@ -41,11 +41,11 @@
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="@{definition.definition}"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_word"
-                tools:text="Definition"
-                android:textColor="@color/white"/>
+                tools:text="Definition" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_examples"
@@ -54,33 +54,33 @@
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="@{definition.example}"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_definition"
-                tools:text="Examples"
-                android:textColor="@color/white"/>
+                tools:text="Examples" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_author"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{definition.author}"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toStartOf="@id/tv_date"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_examples"
-                tools:text="Author"
-                android:textColor="@color/white"/>
+                tools:text="Author" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_date"
+                dateDisplay="@{definition.writtenOn}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                dateDisplay="@{definition.writtenOn}"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_author"
                 app:layout_constraintTop_toBottomOf="@id/tv_examples"
-                tools:text="Jan 1, 2020"
-                android:textColor="@color/white"/>
+                tools:text="Jan 1, 2020" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_thumbs_up"
@@ -90,14 +90,14 @@
                 android:drawableStart="@drawable/ic_thumb_up_black"
                 android:drawablePadding="10dp"
                 android:text="@{Integer.toString(definition.thumbsUp)}"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/tv_thumbs_down"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_date"
-                tools:text="50"
-                android:textColor="@color/white"/>
+                tools:text="50" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_thumbs_down"
@@ -106,12 +106,12 @@
                 android:drawableStart="@drawable/ic_thumb_down_black"
                 android:drawablePadding="10dp"
                 android:text="@{Integer.toString(definition.thumbsDown)}"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_thumbs_up"
                 app:layout_constraintTop_toBottomOf="@id/tv_date"
-                tools:text="50"
-                android:textColor="@color/white"/>
+                tools:text="50" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
